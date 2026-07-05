@@ -3,16 +3,16 @@ import {
   createNote,
   deleteNote,
   getNoteById,
-  getNotes,
+  getAllNotes,
   updateNote,
 } from '../controllers/notesController.js';
 
 const router = Router();
 
-router.get('/', getNotes);
-router.get('/:noteId', getNoteById);
-router.post('/', createNote);
-router.patch('/:noteId', updateNote);
-router.delete('/:noteId', deleteNote);
+router.get('/notes', getAllNotes);
+router.get('/notes/:noteId', getNoteById);
+router.post('/notes', createNote);
+router.delete('/notes/:noteId', deleteNote);
+router.patch('/notes/:noteId', updateNote);
 
 export default router;
